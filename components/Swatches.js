@@ -9,12 +9,11 @@ const Swatches = ({
         {data.map((item) => {
             return <li 
                 className={styles.swatch__item}
-                style={{ backgroundColor: item }}
+                style={{ backgroundColor: item.hex }}
                 onClick={() => {
                     changeHandler(item);
                 }}
             >
-                {item}
             </li>
         })}
     </ul>
