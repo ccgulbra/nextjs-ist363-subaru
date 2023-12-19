@@ -1,5 +1,5 @@
 //core import
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 
 //custom components
 import ButtonUI from './ButtonUI';
@@ -94,22 +94,4 @@ const Mobile = ({ closeHandler }) => {
 }
 Nav.Mobile = Mobile; 
 
-//social nav
-// const Social = () => {
-//     const navItems = getSocialNavItems();
-//     return <nav className={styles.nav__social}>
-//         <ul className={styles.nav__list}>
-//             {navItems.map((navItem, index) => {
-//                 const { label, slug } = navItem; 
-//                 return <li key={index} className={styles.nav__list__item}>
-//                     <Link href={slug}>
-//                         {label}
-//                     </Link>
-//                 </li>
-//             })}
-//         </ul>
-//     </nav>
-// }
-// Nav.Social = Social; 
-
-// export default Nav; 
+export default Nav; 
