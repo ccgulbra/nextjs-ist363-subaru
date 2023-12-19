@@ -9,9 +9,11 @@ const FilterBar = ({ items, activeItem, setActiveItem }) => {
 
     return <div className={styles.filterBar}>
         <ul className={styles.filterBarList}>
+
             {items.map((item, index) => {
                 const { name, slug } = item.node;
-                const buttonClasses = cx({
+                const buttonClasses = cx(
+                    {
                     filterBarListItemButton : true, 
                     active : activeItem === slug
                 });

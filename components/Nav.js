@@ -94,4 +94,22 @@ const Mobile = ({ closeHandler }) => {
 }
 Nav.Mobile = Mobile; 
 
-export default Nav; 
+//social nav
+// const Social = () => {
+//     const navItems = getSocialNavItems();
+//     return <nav className={styles.nav__social}>
+//         <ul className={styles.nav__list}>
+//             {navItems.map((navItem, index) => {
+//                 const { label, slug } = navItem; 
+//                 return <li key={index} className={styles.nav__list__item}>
+//                     <Link href={slug}>
+//                         {label}
+//                     </Link>
+//                 </li>
+//             })}
+//         </ul>
+//     </nav>
+// }
+// Nav.Social = Social; 
+
+// export default Nav; 
