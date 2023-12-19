@@ -1,32 +1,35 @@
-import Link from 'next/link';
+import { useState } from 'react';
+import { AnimatePresence } from 'framer-motion';
+
+import ButtonUI from './ButtonUI';
+import Container from './Container';
+import Logo from './Logo';
+import Nav from './Nav';
+import Row from './Row';
+
+import styles from './header.module.scss';
 
 const Header = () => {
-    return <header>
-        logo<br />
-        <nav>
-            <ul>
-                <li>
-                    <Link href="/">
-                        Home
-                    </Link>
-                </li>
-                <li>
-                    <Link href="/vehicles">
-                        Vehicles
-                    </Link>
-                </li>
-                <li>
-                    <Link href="/about">
-                        About
-                    </Link>
-                </li>
-                <li>
-                    <Link href="/contact">
-                        Contact
-                    </Link>
-                </li>
-            </ul>
-        </nav>
+    // state variable, setter function
+    const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
+    return <header className={styles.header}>
+        <Container>
+            <Row justifyContent="space-between">
+                <Logo />
+                <Nav.Desktop />
+                <ButtonUI 
+                    icon="menu" 
+                    clickHandler={() => {
+                        setIsMobileNavOpen(true);
+                    }}
+                />
+                <AnimatePresence>
+                    {isMobileNavOpen && <Nav.Mobile closeHandler={() => {
+                        setIsMobileNavOpen(false);
+                    }} />}
+                </AnimatePresence>
+            </Row>
+        </Container>
      </header>
 }
 
