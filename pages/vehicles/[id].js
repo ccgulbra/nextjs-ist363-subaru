@@ -1,8 +1,10 @@
+import Container from '../../components/Container';
 import Heading from '../../components/Heading';
 import Image from 'next/image';
 import Layout from '../../components/Layout';
 import { getVehicleBySlug, getAllVehicleSlugs } from '../../lib/api';
 import Showcase from '../../components/Showcase';
+import TrimPicker from '../../components/TrimPicker';
 
 // WATERFALL 
 // 1. getStaticPaths
@@ -38,6 +40,7 @@ export async function getStaticProps({ params }) {
 const SingleVehiclePage = ({ vehicleData }) => {
     const { title, slug, featuredImage, vehicleInformation } = vehicleData; 
     const { headline } = vehicleInformation.showcase;
+    const { trimLevels } = vehicleInformation; 
     return <Layout>
         <Showcase 
             subtitle={title}
@@ -45,10 +48,10 @@ const SingleVehiclePage = ({ vehicleData }) => {
             featuredImage={featuredImage}
         />
         <div id="main-content">
-            main content will go here
+            <Container>
+                <TrimPicker trims={trimLevels} />
+            </Container>
         </div>
-
-        
     </Layout>
 }
 export default SingleVehiclePage; 

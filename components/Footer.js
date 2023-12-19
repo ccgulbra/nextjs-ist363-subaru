@@ -1,35 +1,46 @@
-// import styles from './footer.module.scss';
+import styles from './footer.module.scss';
 
-// import { getSocialNavItems } from '../lib/footer';
+import Image from 'next/image';
 
-// import styles from './socials.module.scss';
+// import Link from 'next/link';
 
-// const Footer = () => {
-//     return <footer className={styles.footer}>footer goes here
-    
-//     <Container>
-//             <Row justifyContent="space-between">
-//                 <Logo />
-//                 <Footer.Social />
-//                 <Socials 
+const Footer = ({ icon }) => {
+     return <footer className={styles.footer}>
+        <h3>Footer</h3>
+        <ul className={styles.footer__list}>
+            <li className={styles.footer__list__item}>
+            <a src="/images/icons/facebook.svg"
+            href="https://www.facebook.com/subaruofamerica">
+            </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/subaru_usa/">
+                    insta
+                </a>
+            </li>
+            <li>
+                <a href="https://www.tiktok.com/@subaruofamerica?lang=en">
+                    tiktok
+                </a>
+            </li>
+            <li>
+                <a href="https://www.youtube.com/user/Subaru">
+                    youtube
+                </a>
+            </li>
 
-//                 // need to rework this part for social logos
-//                     icon="menu" 
-//                     clickHandler={() => {
-//                         setIsMobileNavOpen(true);
-//                     }}
-//                 />
-//                 <AnimatePresence>
-//                     {isMobileNavOpen && <Nav.Mobile closeHandler={() => {
-//                         setIsMobileNavOpen(false);
-//                     }} />}
-//                 </AnimatePresence>
-//             </Row>
-//         </Container>
+        </ul>
+        <p className={styles.footer__copyright}>
+            Copyright 2023 Subaru.
+        </p>
+     
+     </footer>  
 
-//     </footer>
-// }
+ }
+ export default Footer; 
 
+
+// // nav.social
 // const Social = () => {
 //     const navItems = getSocialNavItems();
 //     return <nav className={styles.nav__social}>
@@ -37,36 +48,24 @@
 //             {navItems.map((navItem, index) => {
 //                 const { label, slug } = navItem; 
 //                 return <li key={index} className={styles.nav__list__item}>
-//                     <a href={slug}>
+//                     <Link href={slug}>
 //                         {label}
-//                     </a>
+//                     </Link>
 //                 </li>
 //             })}
 //         </ul>
 //     </nav>
 // }
-// //compound components
-// Footer.Social = Social;
+// Nav.Social = Social; 
 
-// export default Footer;
-
-// from showcase with images 
-
-// import Image from 'next/image';
-
-// import styles from './section.module.scss';
-
-// const Showcase = ({ featuredImage, subtitle, title }) => {
-//     return <section className={styles.showcase}>
-//         showcase stuff
-//         {featuredImage &&
-//             <Image
-//                 src={featuredImage.node.sourceUrl}
-//                 alt={featuredImage.node.altText}
-//                 width={featuredImage.node.mediaDetails.width}
-//                 height={featuredImage.node.mediaDetails.height}
-//             />
-//         }
-//     </section>
+// const social = ({ icon }) => {
+//         <Image 
+//             src={`/images/icons/${icon}.svg`}
+//             alt={`${icon} icon`}
+//             width={16}
+//             height={12}
+//         />
+//     </button>
 // }
-// export default Showcase;
+
+// export default Footer; 

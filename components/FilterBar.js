@@ -1,4 +1,3 @@
-
 import classNames from 'classnames/bind';
 
 import styles from './filterbar.module.scss';
@@ -10,7 +9,7 @@ const FilterBar = ({ items, activeItem, setActiveItem }) => {
     return <div className={styles.filterBar}>
         <ul className={styles.filterBarList}>
 
-            {items.map((item, index) => {
+            {items?.map((item, index) => {
                 const { name, slug } = item.node;
                 const buttonClasses = cx(
                     {
