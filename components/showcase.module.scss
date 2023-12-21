@@ -4,6 +4,7 @@
     background-color: lime green; 
     position: relative; 
     &__text {
+        color: white; 
         background-color: black; 
         padding: 2rem; 
         @include mixins.breakpoint(laptop) {
