@@ -62,7 +62,7 @@
 	$colors: black, green, white, pink;
 
 	@each $color in $colors {
-		&.font-color-#{color} {
+		&.font-color-#{$color} {
 			color: $color; 
 		}
 	}
@@ -72,7 +72,7 @@
 	$alignments: left, center, right, justify;
 	
 	@each $alignment in $alignments {
-		&.text-align-#{alignment} {
+		&.text-align-#{$alignment} {
 			text-align: $alignment;
 		}
 	}
@@ -83,7 +83,7 @@
 
 	@each $side in $sides {
 		@for $i from 1 through 12 {
-			&.margin-#{side}-#{$i} {
+			&.margin-#{$side}-#{$i} {
 				margin-#{$side}: #{math.div($i, 2)}rem; 
 			}
 		}
@@ -95,7 +95,7 @@
 
 	@each $side in $sides {
 		@for $i from 1 through 12 {
-			&.padding-#{side}-#{$i} {
+			&.padding-#{$side}-#{$i} {
 				padding-#{$side}: #{math.div($i, 2)}rem; 
 			}
 		}

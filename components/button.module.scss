@@ -7,10 +7,14 @@
     font-weight: bold; 
     color: black;
     font-family: Arial; 
+    display: block;
+    width: 100%;
     &.primary {
         background-color: vars.$color__primary;
     }
     &.secondary {
-        background-color: pink;
+        color: white; 
+        background-color: black;
+        border: 1px solid white;
     }
 }

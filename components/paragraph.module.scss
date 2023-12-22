@@ -5,6 +5,8 @@
     font-family: Arial; 
     line-height: 1.2; 
     color: black; 
+    @include mixins.fontColors();
+    @include mixins.margins();
         a {
             color: blue;
             font-weight: bold; 

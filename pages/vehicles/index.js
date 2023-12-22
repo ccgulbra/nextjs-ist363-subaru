@@ -1,5 +1,6 @@
+import CTA from '../../components/CTA';
 import Container from '../../components/Container';
-import Heading from '../../components/FilterBar';
+import Heading from '../../components/Heading';
 import FilterBar from '../../components/FilterBar';
 import Grid from '../../components/Grid';
 import Layout from '../../components/Layout';
@@ -62,6 +63,7 @@ const VehiclesPage = ({ vehicles, vehicleTypes }) => {
                 items={filteredVehicles}
             />
         </Container>
+        <CTA />
     </Layout>
 }
 export default VehiclesPage; 

@@ -3,12 +3,23 @@ import { motion } from "framer-motion"
 
 // custom components
 import Heading from './Heading';
-import styles from './grid.module.scss';
 import Link from 'next/link';
 import Image from 'next/image';
 import Paragraph from './Paragraph';
 
 // styles 
+import styles from './grid.module.scss';
+
+const convertPriceToFormattedString = (price) => {
+    //turn integer into a string
+    let priceArray = price.toString().split('');
+    for (let i = priceArray.length - 3; i > 0; i -= 3) {
+        priceArray.splice(i, 0, ',');
+    }
+    return '$' + priceArray.join('');
+}
+
+
 const Grid = ({ items }) => {
     const sectionVariants = {
         closed: { opacity: 0 
@@ -43,7 +54,8 @@ const Grid = ({ items }) => {
             const { trimLevels } = vehicleInformation; 
             return <motion.article 
                 key={index}
-                variants={articleVariants} 
+                variants={articleVariants}
+                className={styles.grid__item}
                 >
                         {trimLevels && trimLevels[0].images.thumbnail &&
                             <Image 
@@ -59,9 +71,11 @@ const Grid = ({ items }) => {
                         >    
                             {title}
                         </Heading>
-                        <Paragraph>
-                            Starting at $25,000
-                        </Paragraph>
+                        {trimLevels[0].msrp &&
+                            <Paragraph>
+                            Starting at {convertPriceToFormattedString(trimLevels[0].msrp)}
+                            </Paragraph>
+                        }
                         <Paragraph>
                             <Link href={`/vehicles/${slug}`}>learn more</Link>
                         </Paragraph>
